@@ -20,7 +20,7 @@ public class E4JVector3 {
         return "" + x + ", " + y + ", " + z;
     }
 
-    public E4JVector3 parseE4JVector3(String s) { 
+    public static E4JVector3 parseE4JVector3(String s) { 
         String clearedStr = "";
 
         for (int i = 0; i < s.length(); i++) {

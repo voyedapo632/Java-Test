@@ -18,7 +18,7 @@ public class E4JVector2 {
         return "" + x + ", " + y;
     }
 
-    public E4JVector2 parseE4JVector2(String s) { 
+    public static E4JVector2 parseE4JVector2(String s) { 
         String clearedStr = "";
 
         for (int i = 0; i < s.length(); i++) {

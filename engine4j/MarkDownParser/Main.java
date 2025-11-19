@@ -1110,24 +1110,24 @@ public class Main {
         //System.out.println(content);
 
         // Parse the document
-        // MarkDownDocument mainDocument = new MarkDownDocument("Document");
-        // MarkDownReader.read(mainDocument, content);
-// 
-        // // Get the root directory from the document
-        // MarkDownDocument rootDocument = new MarkDownDocument("Root");
-        // MarkDownReader.read(rootDocument, mainDocument.getElementsByTag("Root").get(0).content);
-        // SafeList<MarkDownElement> scriptableEntities = rootDocument.getElementsByTag("ScriptableEntity");
-// 
-        // for (int i = 0; i < scriptableEntities.getSize(); i++) {
-        //     MarkDownElement e = scriptableEntities.get(i);
-        //     
-        //     for (int j = 0; j < e.attributes.getSize(); j++) {
-        //         MarkDownAttribute a = e.attributes.get(j);
-        //         System.out.println(String.format("%s: %s", a.name, a.value));
-        //     }
-// 
-        //     System.out.println(e.content);
-        // }
+        MarkDownDocument mainDocument = new MarkDownDocument("Document");
+        MarkDownReader.read(mainDocument, content);
+
+        // Get the root directory from the document
+        MarkDownDocument rootDocument = new MarkDownDocument("Root");
+        MarkDownReader.read(rootDocument, mainDocument.getElementsByTag("Root").get(0).content);
+        SafeList<MarkDownElement> scriptableEntities = rootDocument.getElementsByTag("ScriptableEntity");
+
+        for (int i = 0; i < scriptableEntities.getSize(); i++) {
+            MarkDownElement e = scriptableEntities.get(i);
+
+            for (int j = 0; j < e.attributes.getSize(); j++) {
+                MarkDownAttribute a = e.attributes.get(j);
+                System.out.println(String.format("%s: %s", a.name, a.value));
+            }
+        
+            System.out.println(e.content);
+        }
 
         Engine engine = new Engine();
         engine.start((long)(1000.0 / 5120.0)); // 60 FPS
